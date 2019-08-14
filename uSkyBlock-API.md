@@ -1,19 +1,12 @@
-![uSkyblock-Revived](http://i.imgur.com/JbSV18m.png)
-
-uSkyBlock has an API
+uSkyBlock has an API.
 
 ## Environment - Maven
-
 First off, add the following to your `pom.xml`
 ```xml
 <repositories>
   <repository>
-    <id>github-uskyblock-api</id>
-    <url>https://raw.githubusercontent.com/uskyblock/uskyblock-repo/master/</url>
-    <snapshots>
-      <enabled>true</enabled>
-      <updatePolicy>always</updatePolicy>
-    </snapshots>
+    <id>ultimateskyblock</id>
+    <url>https://www.uskyblock.ovh/maven/uskyblock/</url>
   </repository>
 </repositories>
 ```
@@ -23,10 +16,31 @@ And in your dependency-section:
 <dependency>
   <groupId>com.github.rlf</groupId>
   <artifactId>uSkyBlock-API</artifactId>
-  <version>2.7.7</version>
+  <version>2.8.3</version>
 </dependency>
 ```
-If you are not using maven, grab the api-jar and put it in your classpath.
+Please check to make sure that you're using the latest release version (not ending in -SNAPSHOT).
+
+## Environment - Gradle
+Repository:
+```gradle
+repositories {
+  maven {
+    name "ultimateskyblock"
+    url "https://www.uskyblock.ovh/maven/uskyblock/"
+  }
+}
+```
+
+Dependency:
+```gradle
+dependencies {
+  compile "com.github.rlf:uSkyBlock-API:2.8.3"
+}
+```
+Please check to make sure that you're using the latest release version (not ending in -SNAPSHOT).
+
+If you are not using Maven or Gradle, grab the api-jar and put it in your classpath.
 
 ## Java Integration
 
@@ -71,3 +85,6 @@ public class uSkyBlockListener implements Listener {
     }
 }
 ```
+
+## Javadocs
+Javadocs for the latest uSkyBlock-API release are available [here](https://www.uskyblock.ovh/javadocs/release/uSkyBlock-API/).
